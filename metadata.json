@@ -1,0 +1,6 @@
+{
+  "name": "Furious Fly Official Website",
+  "description": "Official landing, ecosystem dashboard, and interactive showcase for the Furious Fly tech brand. Includes autonomous AI intelligence demonstration, security and onboarding workflows for Fly Messenger, and sneak-peek layouts for the upcoming social media network.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

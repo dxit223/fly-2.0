@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - Furious Fly | Data Protection Mandates</title>
+  <meta name="description" content="Read Furious Fly's privacy policy and data security guidelines. Founded by Hitesh Kumar, we maintain a secure, private, and encrypted digital environment.">
+  <link rel="icon" type="image/png" href="assets/icons/favicon.png" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22 width=%2216%22 height=%2216%22><rect width=%2216%22 height=%2216%22 fill=%22%232563eb%22 rx=%224%22/><text x=%224%22 y=%2212%22 fill=%22white%22 font-weight=%22bold%22 font-size=%2210%22 font-family=%22sans-serif%22>F</text></svg>'">
+  <!-- Tailwind CDN & Custom styles -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Outfit', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-white text-slate-900 min-h-screen flex flex-col relative tech-grid overflow-x-hidden">
+
+  <!-- Glowing background elements -->
+  <div class="glow-blob bg-blue-500 top-20 left-10"></div>
+  <div class="glow-blob bg-cyan-400 top-96 right-10"></div>
+
+  <!-- Header Navigation -->
+  <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-transparent bg-white/75 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <!-- Logo and Brand -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <img src="assets/logo.svg" alt="Furious Fly Logo" class="h-10 w-10 object-contain group-hover:scale-105 transition-transform shrink-0" />
+        <div class="flex flex-col">
+          <span class="text-xl font-bold tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors">Furious Fly</span>
+          <span class="text-[9px] font-semibold tracking-wider uppercase text-blue-500">Fly Beyond Limits</span>
+        </div>
+      </a>
+      
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
+        <a href="index.html" class="hover:text-slate-900 transition-colors">Home</a>
+        <a href="about.html" class="hover:text-slate-900 transition-colors">About</a>
+        <a href="services.html" class="hover:text-slate-900 transition-colors">Services</a>
+        <a href="blog.html" class="hover:text-slate-900 transition-colors">Blog</a>
+        <a href="contact.html" class="hover:text-slate-900 transition-colors">Contact</a>
+      </nav>
+
+      <!-- Desktop CTA -->
+      <div class="hidden md:flex items-center gap-4">
+        <a href="contact.html" class="px-5 py-2.5 bg-blue-600 text-white text-xs font-semibold rounded-xl hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-500/10 transition-all">Get Started</a>
+        <a href="admin/index.html" class="text-slate-400 hover:text-slate-700 text-xs font-medium">Portal ↗</a>
+      </div>
+
+      <!-- Mobile Burger -->
+      <button id="mobile-menu-toggle" class="md:hidden p-2 text-slate-700 hover:bg-slate-50 rounded-xl focus:outline-none shrink-0" aria-label="Toggle Mobile Menu">
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay -->
+  <div id="mobile-overlay" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 hidden"></div>
+
+  <!-- Mobile Menu Drawer -->
+  <div id="mobile-drawer" class="fixed top-0 right-0 h-full w-[280px] bg-white z-50 shadow-2xl border-l border-slate-100 transform translate-x-full flex flex-col">
+    <div class="p-6 border-b border-slate-100 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <img src="assets/logo.svg" alt="Furious Fly Logo" class="h-8 w-8 object-contain shrink-0" />
+        <span class="text-base font-bold text-slate-900">Furious Fly</span>
+      </div>
+      <button id="mobile-drawer-close" class="p-1.5 hover:bg-slate-100 rounded-lg text-slate-400 hover:text-slate-600">
+        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 flex flex-col gap-5">
+      <a href="index.html" class="text-lg font-semibold text-slate-800 hover:text-blue-600 transition-colors">Home</a>
+      <a href="about.html" class="text-lg font-semibold text-slate-800 hover:text-blue-600 transition-colors">About</a>
+      <a href="services.html" class="text-lg font-semibold text-slate-800 hover:text-blue-600 transition-colors">Services</a>
+      <a href="blog.html" class="text-lg font-semibold text-slate-800 hover:text-blue-600 transition-colors">Blog</a>
+      <a href="contact.html" class="text-lg font-semibold text-slate-800 hover:text-blue-600 transition-colors">Contact</a>
+      <div class="border-t border-slate-100 pt-5 mt-2">
+        <a href="contact.html" class="w-full text-center block px-4 py-2.5 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-colors">Get Started</a>
+        <a href="admin/index.html" class="w-full text-center block px-4 py-2.5 mt-3 border border-slate-200 text-slate-700 font-medium rounded-xl hover:bg-slate-50 transition-colors">Admin Portal</a>
+      </div>
+    </nav>
+    <div class="p-6 bg-slate-50 border-t border-slate-100 text-center">
+      <p class="text-[11px] text-slate-400 font-medium">furiousfly.in • Delhi, India</p>
+    </div>
+  </div>
+
+  <!-- Main Workspace -->
+  <main class="flex-1 pt-24 pb-20">
+
+    <!-- CONTENT WRAPPER -->
+    <section class="py-12 md:py-20 text-left">
+      <div class="max-w-4xl mx-auto px-6">
+        
+        <span class="text-xs font-semibold uppercase tracking-widest text-blue-600 bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-100">Legal Directives</span>
+        <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight font-display mt-6 mb-12">
+          Privacy Policy
+        </h1>
+
+        <div class="space-y-8 text-slate-700 leading-relaxed text-sm md:text-base border-t border-slate-100 pt-10">
+          
+          <div class="space-y-3">
+            <h3 class="text-lg font-bold text-slate-900">1. Data Security Commitment</h3>
+            <p>
+              At Furious Fly (operating on `furiousfly.in`), our highest technical directive is to respect and secure the integrity of user information. Under the leadership of founder Hitesh Kumar, we build secure systems that encrypt all client inquiries and database logs end-to-end. We do not sell or leak user datasets.
+            </p>
+          </div>
+
+          <div class="space-y-3">
+            <h3 class="text-lg font-bold text-slate-900">2. Collection of Information</h3>
+            <p>
+              We collect information that you explicitly submit to us via our project inquiry forms (such as Name, Email Address, Telephone Numbers, and custom project scopes). We utilize standard sanitizers to prevent cross-site scripts and SQL injection parameters.
+            </p>
+          </div>
+
+          <div class="space-y-3">
+            <h3 class="text-lg font-bold text-slate-900">3. Sovereign AI Datasets</h3>
+            <p>
+              Our custom AI division specializes in private enterprise sandboxing. Any data submitted for our customized machine learning training is processed via isolated pipelines. We do not feed private business intelligence into public general LLM interfaces.
+            </p>
+          </div>
+
+          <div class="space-y-3">
+            <h3 class="text-lg font-bold text-slate-900">4. Browser Cookies and Storage</h3>
+            <p>
+              We utilize temporary client-side local storage and lightweight functional cookies to persist contact receipts and blog preferences. You may clear your browser cookies and local storage parameters at any time to remove these transient records immediately.
+            </p>
+          </div>
+
+          <div class="space-y-3">
+            <h3 class="text-lg font-bold text-slate-900">5. Legal Inquiries</h3>
+            <p>
+              If you have any questions or require data deletion logs, reach out directly to Hitesh Kumar via <a href="mailto:info@furiousfly.in" class="text-blue-600 font-bold hover:underline">info@furiousfly.in</a>.
+            </p>
+          </div>
+
+          <p class="text-xs text-slate-400 font-medium pt-8">
+            Last updated: July 08, 2026 • Verified safe for furiousfly.in
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-950 text-white border-t border-slate-900 py-16 relative z-10">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-slate-900">
+        <!-- Logo and address -->
+        <div class="lg:col-span-5 space-y-6 text-left">
+          <a href="index.html" class="flex items-center gap-3 group">
+            <img src="assets/logo.svg" alt="Furious Fly Logo" class="h-10 w-10 object-contain group-hover:scale-105 transition-transform shrink-0" />
+            <div class="flex flex-col">
+              <span class="text-xl font-bold tracking-tight text-white">Furious Fly</span>
+              <span class="text-[9px] font-semibold tracking-wider uppercase text-blue-400">Fly Beyond Limits</span>
+            </div>
+          </a>
+          <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
+            Professional technology company engineering responsive, lightning-fast digital solutions, secure enterprise AI models, and scalable system consulting pipelines.
+          </p>
+          <div class="space-y-2.5 text-xs text-slate-400">
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+              <span>info@furiousfly.in</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0" /></svg>
+              <span>Delhi, India</span>
+            </div>
+          </div>
+        </div>
+        <!-- Quick links -->
+        <div class="lg:col-span-3 text-left space-y-4">
+          <h4 class="text-sm font-bold uppercase tracking-wider text-slate-200">Capabilities</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><a href="services.html" class="hover:text-blue-400 transition-colors">Website Development</a></li>
+            <li><a href="services.html" class="hover:text-blue-400 transition-colors">AI Solutions</a></li>
+            <li><a href="services.html" class="hover:text-blue-400 transition-colors">Technical Consulting</a></li>
+            <li><a href="services.html" class="hover:text-blue-400 transition-colors">Custom Software Projects</a></li>
+          </ul>
+        </div>
+        <!-- Site map -->
+        <div class="lg:col-span-2 text-left space-y-4">
+          <h4 class="text-sm font-bold uppercase tracking-wider text-slate-200">Company</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><a href="about.html" class="hover:text-blue-400 transition-colors">About Us</a></li>
+            <li><a href="blog.html" class="hover:text-blue-400 transition-colors">Company Blog</a></li>
+            <li><a href="privacy.html" class="hover:text-blue-400 transition-colors">Privacy Policy</a></li>
+            <li><a href="admin/index.html" class="hover:text-blue-400 transition-colors">Admin Portal</a></li>
+          </ul>
+        </div>
+        <!-- Domain -->
+        <div class="lg:col-span-2 text-left space-y-4">
+          <h4 class="text-sm font-bold uppercase tracking-wider text-slate-200">Legal</h4>
+          <div class="space-y-1">
+            <div class="text-xs font-semibold text-slate-300">furiousfly.in</div>
+            <div class="text-[10px] text-slate-500 font-medium uppercase">Domain Secured</div>
+          </div>
+        </div>
+      </div>
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <p>Furious Fly &copy; 2026. All rights reserved. Created by Hitesh Kumar.</p>
+        <div class="flex items-center gap-4">
+          <a href="privacy.html" class="hover:text-slate-300">Privacy</a>
+          <span>•</span>
+          <a href="contact.html" class="hover:text-slate-300">Contact Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core JavaScript Framework -->
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Sign In - Furious Fly Portal</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/png" href="../assets/icons/favicon.png" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22 width=%2216%22 height=%2216%22><rect width=%2216%22 height=%2216%22 fill=%22%232563eb%22 rx=%224%22/><text x=%224%22 y=%2212%22 fill=%22white%22 font-weight=%22bold%22 font-size=%2210%22 font-family=%22sans-serif%22>F</text></svg>'">
+  <!-- Tailwind CDN & Custom styles -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Outfit', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-950 text-white min-h-screen flex items-center justify-center p-6 relative tech-grid">
+
+  <!-- Glowing background elements -->
+  <div class="glow-blob bg-blue-600 top-1/4 left-1/4 opacity-10"></div>
+  <div class="glow-blob bg-cyan-400 bottom-1/4 right-1/4 opacity-10"></div>
+
+  <!-- Sign In Card -->
+  <div class="w-full max-w-md bg-slate-900 border border-slate-800 rounded-3xl p-8 shadow-2xl relative z-10 animate-fade-in space-y-8">
+    
+    <!-- Logo Header -->
+    <div class="text-center space-y-3 flex flex-col items-center">
+      <img src="../assets/logo.svg" alt="Furious Fly Logo" class="h-12 w-12 object-contain shrink-0" />
+      <div class="space-y-1">
+        <h1 class="text-2xl font-bold tracking-tight font-display text-white">Furious Fly CMS</h1>
+        <p class="text-xs text-slate-400">Secure Access Portal for Hitesh Kumar</p>
+      </div>
+    </div>
+
+    <!-- Sign In Form -->
+    <form id="admin-login-form" class="space-y-5 text-left">
+      
+      <div class="space-y-2">
+        <label for="admin-email" class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Username or Email</label>
+        <input 
+          type="text" 
+          id="admin-email" 
+          required 
+          value="hitesh@furiousfly.in" 
+          class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-xs font-semibold focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-white"
+        >
+      </div>
+
+      <div class="space-y-2">
+        <div class="flex justify-between items-center">
+          <label for="admin-pass" class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Security Access Key</label>
+          <span class="text-[10px] text-slate-500 font-mono">256-bit AES</span>
+        </div>
+        <input 
+          type="password" 
+          id="admin-pass" 
+          required 
+          value="furiousfly2026" 
+          class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-xs font-semibold focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-white font-mono"
+        >
+      </div>
+
+      <div class="flex items-center justify-between text-xs pt-1">
+        <label class="flex items-center gap-2 text-slate-400">
+          <input type="checkbox" checked class="rounded border-slate-800 bg-slate-950 text-blue-600 focus:ring-0 focus:ring-offset-0">
+          Remember Session
+        </label>
+        <a href="#" class="text-blue-400 hover:underline">Forgot Key?</a>
+      </div>
+
+      <div class="pt-2">
+        <button 
+          type="submit" 
+          class="w-full py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-xs tracking-wide transition-all shadow-lg shadow-blue-500/20 hover:-translate-y-0.5"
+        >
+          Sign In to Dashboard
+        </button>
+      </div>
+
+    </form>
+
+    <!-- Disclaimer / Info -->
+    <div class="pt-6 border-t border-slate-800 text-center text-[11px] text-slate-500 leading-relaxed font-medium">
+      This admin dashboard coordinates directly with the localized content sync. Changes persist locally inside browser state pipelines.
+    </div>
+
+  </div>
+
+  <script>
+    document.getElementById('admin-login-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const email = document.getElementById('admin-email').value.trim();
+      const pass = document.getElementById('admin-pass').value.trim();
+
+      if (!email || !pass) {
+        alert('Please enter both your credentials.');
+        return;
+      }
+
+      // Check if superadmin
+      if (email === "hitesh@furiousfly.in" && pass === "furiousfly2026") {
+        localStorage.setItem('furiousfly_admin_logged', 'true');
+        localStorage.removeItem('furiousfly_logged_worker'); // Superadmin has no worker payload
+        
+        const button = e.target.querySelector('button[type="submit"]');
+        button.disabled = true;
+        button.innerHTML = "Authenticating Superadmin...";
+        
+        setTimeout(() => {
+          window.location.href = 'dashboard.html';
+        }, 800);
+        return;
+      }
+
+      // Check if registered worker
+      const workers = JSON.parse(localStorage.getItem('furiousfly_workers') || '[]');
+      const matchedWorker = workers.find(w => w.username === email && w.password === pass);
+
+      if (matchedWorker) {
+        localStorage.setItem('furiousfly_admin_logged', 'true');
+        localStorage.setItem('furiousfly_logged_worker', JSON.stringify({
+          id: matchedWorker.id,
+          name: matchedWorker.name,
+          username: matchedWorker.username,
+          role: 'worker'
+        }));
+
+        // Log worker login action
+        const workDone = JSON.parse(localStorage.getItem('furiousfly_work_done') || '[]');
+        workDone.push({
+          id: Date.now(),
+          workerId: matchedWorker.id,
+          workerName: matchedWorker.name,
+          action: "Logged into Admin Portal",
+          date: new Date().toLocaleString('en-US', {
+            month: 'short',
+            day: 'numeric',
+            year: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit'
+          })
+        });
+        localStorage.setItem('furiousfly_work_done', JSON.stringify(workDone));
+
+        const button = e.target.querySelector('button[type="submit"]');
+        button.disabled = true;
+        button.innerHTML = `Authenticating ${matchedWorker.name}...`;
+        
+        setTimeout(() => {
+          window.location.href = 'dashboard.html';
+        }, 800);
+      } else {
+        alert('Invalid Security Access Credentials or Worker ID.');
+      }
+    });
+  </script>
+
+</body>
+</html>
